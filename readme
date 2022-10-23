@@ -1,0 +1,64 @@
+Inside that directory, you can run several commands:
+
+  pnpm dlx playwright test
+    Runs the end-to-end tests.
+
+  pnpm dlx playwright test --project=chromium
+    Runs the tests only on Desktop Chrome.
+
+  pnpm dlx playwright test example
+    Runs the tests in a specific file.
+
+  pnpm dlx playwright test --debug
+    Runs the tests in debug mode.
+
+  pnpm dlx playwright codegen
+    Auto generate tests with Codegen.
+
+We suggest that you begin by typing:
+
+    pnpm dlx playwright test
+
+And check out the following files:
+  - ./tests/example.spec.ts - Example end-to-end test
+  - ./tests-examples/demo-todo-app.spec.ts - Demo Todo App end-to-end tests
+  - ./playwright.config.ts - Playwright Test configuration
+
+Visit https://playwright.dev/docs/intro for more information. ✨
+
+Happy hacking! 🎭
+
+
+## show report with pnpm
+pnpm dlx playwright show-report
+or 
+pnpx playwright show-report
+
+## run tests
+- test has Navigation in filename
+  ` pnpm dlx playwright test Navigation`
+
+- tests that has Navigation in their title/name
+  ` pnpm dlx playwright test -g "Navigation"`
+
+- run tests in headed mode
+`pnpm dlx playwright test -g "Navigation" --headed`
+
+- run test on a specific browser only
+`pnpm dlx playwright test -g "Navigation" --project=firefox`
+
+## debug tests
+- debug navigation tests on firefox
+`pnpm dlx playwright test -g "Navigation" --debug --project=firefox`
+
+- debug a specific file
+`pnpm dlx playwright test my-first-test.spec.ts --debug --project=firefox`
+
+- debug a specific test. Note: the number `13` is the line number where the test is defined. It is NOT a breakpoint.
+`pnpm dlx playwright test my-first-test.spec.ts:13 --debug --project=firefox`
+
+## codegen tests
+- for example generate test playwright.dev
+  `pnpm dlx playwright codegen playwright.dev`
+- interact with the page and click `Record` when you  are done.
+- copy the generated code to your editor.
